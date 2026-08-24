@@ -1,19 +1,19 @@
-import { defineConfig } from 'vite'
-import react, { reactCompilerPreset } from '@vitejs/plugin-react'
-import babel from '@rolldown/plugin-babel'
-import tailwindcss from '@tailwindcss/vite'
-import path from 'path'
+import { defineConfig } from 'vite';
+import react, { reactCompilerPreset } from '@vitejs/plugin-react';
+import babel from '@rolldown/plugin-babel';
+import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
 
 import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    babel({ presets: [reactCompilerPreset()] }),
-    tailwindcss(),
+    plugins: [
+        react(),
+        babel({ presets: [reactCompilerPreset()] }),
+        tailwindcss(),
 
-    VitePWA({
+        VitePWA({
             registerType: 'autoUpdate',
             manifest: {
                 name: 'Spelling Bee',
@@ -34,13 +34,26 @@ export default defineConfig({
                         type: 'image/png',
                     },
                 ],
+                screenshots: [
+                    {
+                        src: '/screenshots/desktop.png',
+                        sizes: '1280x720',
+                        type: 'image/png',
+                        form_factor: 'wide',
+                    },
+                    {
+                        src: '/screenshots/mobile.png',
+                        sizes: '390x844',
+                        type: 'image/png',
+                    },
+                ],
             },
         }),
-  ],
-  
-  resolve: {
+    ],
+
+    resolve: {
         alias: {
-            "@": path.resolve(__dirname, "./src"),
+            '@': path.resolve(__dirname, './src'),
         },
     },
-})
+});
