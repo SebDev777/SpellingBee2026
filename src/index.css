@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Geist:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-1: #fafafb;
+  --color-brand-2: #e5e6e8;
+  --color-brand-3: #eef0f1;
+  --color-brand-4: #fece21;
+  --color-brand-5: #bfc1c1;
+  --color-brand-6: #f9f9ea;
+  --color-brand-7: #fad21e;
+  --color-brand-8: #9d9fa1;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100dvh;
+  margin: 0;
+
+  font-family: 'Geist', sans-serif;
+  background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 214, 224, 0.8) 0%,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(221, 214, 255, 0.75) 0%,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 75% 85%,
+            rgba(190, 239, 218, 0.7) 0%,
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 20% 90%,
+            rgba(255, 226, 183, 0.8) 0%,
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fffbea 0%,
+            #fff4c7 30%,
+            #ffe8a8 55%,
+            #fff0d4 100%
+        );    
+
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.item {
+  border-radius: 9999px;
+  padding: 0.5rem 1rem ;
+}
+
+@keyframes word-roll {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-word-roll {
+  animation: word-roll 300ms ease-out;
+}

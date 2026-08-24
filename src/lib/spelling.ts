@@ -1,0 +1,41 @@
+export const spellingData = {
+    dictionary: {
+        "a": "ei",
+        "b": "bi",
+        "c": "si",
+        "d": "di",
+        "e": "i",
+        "f": "ef",
+        "g": "dji",
+        "h": "eich",
+        "i": "ai",
+        "j": "djei",
+        "k": "kei",
+        "l": "el",
+        "m": "em",
+        "n": "en",
+        "o": "ou",
+        "p": "pi",
+        "q": "kiu",
+        "r": "ar",
+        "s": "es",
+        "t": "ti",
+        "u": "iu",
+        "v": "vi",  
+        "w": "dabeliu",
+        "x": "eks",
+        "y": "wai",
+        "z": "zi"
+    },
+
+    specialCharacters: {
+        " ": "speis",
+        "-": "dach",
+        "_": "andescor",
+        "'": "apostrof",
+        ".": "dat",
+        ",": "coma",
+        "!": "eksclamation marc",
+        "?": "cuestion marc",
+    }
+}
