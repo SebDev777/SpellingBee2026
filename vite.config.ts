@@ -25,7 +25,7 @@ export default defineConfig({
                 icons: [
                     {
                         src: '/bee.png',
-                        sizes: '512/512',
+                        sizes: '512x512',
                         type: 'image/png',
                     },
                 ],
