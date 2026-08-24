@@ -1,28 +1,41 @@
-import formatWord from "@/utils/formatWord";
+import formatWord from '@/utils/formatWord';
+
 import { useGameStore } from '@/features/game/gameStore';
-import convertWordToSpell from "@/utils/convertWordToSpell";
+
+import convertWordToSpell from '@/utils/convertWordToSpell';
 
 export default function RollHistory() {
     const rollHistory = useGameStore((state) => state.rollHistory);
-    console.log(rollHistory)
+
     return (
-        <ul className="w-full px-4 space-y-2">
+        <ul className="w-full min-w-0 space-y-2 px-2 sm:px-4">
             {rollHistory.length === 0 ? (
-                <p className="flex items-center justify-center font-semibold bg-red-300/30 rounded-xl">
+                <p className="flex items-center justify-center rounded-xl bg-red-300/30 px-2 py-1 text-center text-sm font-semibold sm:text-base">
                     No history avaiable
                 </p>
             ) : (
                 [...rollHistory].reverse().map((word, index) => (
-                    <li key={`${word.word}-${index}`}>
+                    <li
+                        key={`${word.word}-${index}`}
+                        className="w-full min-w-0"
+                    >
                         <div
-                            className={`rounded-lg bg-brand-3 px-4 py-2 transition-all duration-500 ease-in-out ${index === 0 ? 'bg-brand-7' : 'bg-brand-3'}`}
+                            className={`w-full min-w-0 rounded-lg px-2 py-1.5 transition-all duration-500 ease-in-out sm:px-4 sm:py-2 ${
+                                index === 0 ? 'bg-brand-7' : 'bg-brand-3'
+                            }`}
                         >
-                            <div className="flex flex-row justify-between">
-                                <div className="flex items-center justify-start gap-4">
-                                    <div className="">{index + 1}</div>
-                                    <p>{formatWord(word.word)}</p>
+                            <div className="flex w-full min-w-0 items-center justify-between gap-2">
+                                <div className="flex min-w-0 flex-1 items-center gap-2">
+                                    <div className="shrink-0 text-sm sm:text-base">
+                                        {index + 1}
+                                    </div>
+
+                                    <p className="min-w-0 truncate text-sm sm:text-base">
+                                        {formatWord(word.word)}
+                                    </p>
                                 </div>
-                                <p className="italic">
+
+                                <p className="min-w-0 shrink text-right text-xs italic sm:text-base">
                                     {convertWordToSpell(word.word).map(
                                         (item, index, array) => (
                                             <span

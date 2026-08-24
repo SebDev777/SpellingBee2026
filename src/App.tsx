@@ -11,10 +11,11 @@ export default function App() {
     return (
         <BrowserRouter>
             <Toaster />
+
             <div className="min-h-dvh flex flex-col">
                 <Header />
 
-                <main className="flex-1 flex">
+                <main className="flex-1 min-w-0">
                     <Routes>
                         <Route path="/" element={<Main />} />
                         <Route path="/settings" element={<Settings />} />
