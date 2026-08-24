@@ -4,12 +4,33 @@ import babel from '@rolldown/plugin-babel'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
+import { VitePWA } from 'vite-plugin-pwa';
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] }),
-    tailwindcss()
+    tailwindcss(),
+
+    VitePWA({
+            registerType: 'autoUpdate',
+            manifest: {
+                name: 'Spelling Bee',
+                short_name: 'Spelling Bee',
+                description: 'Practice your spelling skills',
+                theme_color: '#ffffff',
+                background_color: '#ffffff',
+                display: 'standalone',
+                icons: [
+                    {
+                        src: '/bee.png',
+                        sizes: '512/512',
+                        type: 'image/png',
+                    },
+                ],
+            },
+        }),
   ],
   
   resolve: {
