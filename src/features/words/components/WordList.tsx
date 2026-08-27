@@ -2,6 +2,8 @@ import Controls from './Controls';
 import { useGameStore } from '@/features/game/gameStore';
 import WordItem from './WordItem';
 
+// TODO: fix word list key & rendering
+
 export default function WordList() {
     const wordList = useGameStore((state) => state.wordList);
     const removeWord = useGameStore((state) => state.removeWord);
@@ -18,9 +20,9 @@ export default function WordList() {
                                 sensitivity: 'base',
                             }),
                         )
-                        .map((item) => (
+                        .map((item, index) => (
                             <WordItem
-                                key={item.id}
+                                key={`${item.id}-${index}-${item.word}`}
                                 id={item.id}
                                 word={item.word}
                                 onDelete={removeWord}

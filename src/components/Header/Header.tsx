@@ -27,7 +27,7 @@ export default function Header() {
                 <p className="text-sm sm:text-base">
                     <span className="font-bold text-sky-500">Hosted by:</span>{' '}
                     <span className="font-semibold">
-                        Mg. Adela Gaona Moscoso
+                        Mg. Adela Gaona Moscoso & Mg. Mayerly Bernate
                     </span>
                 </p>
             </div>

@@ -29,7 +29,7 @@ export const spellingData = {
     },
 
     specialCharacters: {
-        " ": "speis",
+        //" ": "",
         "-": "dach",
         "_": "andescor",
         "'": "apostrof",
