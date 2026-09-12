@@ -3,6 +3,7 @@ import { useGameStore } from "@/features/game/gameStore";
 
 const addWord = useGameStore.getState().addWord;
 const cleanWordList = useGameStore.getState().cleanList;
+const resetHistory = useGameStore.getState().resetHistory;
 
 export const handleFile = async (
     file: File | undefined,
@@ -21,6 +22,8 @@ export const handleFile = async (
     setFileData(file);
 
     words.forEach((word) => addWord(word));
+
+    resetHistory()
 };
 
 /* 
